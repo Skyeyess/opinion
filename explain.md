@@ -1,0 +1,43 @@
+hnaOpinion/             ---             项目名
+    README.md           ---             vue官方操作流程
+    node_modules/       ---             node模块包
+    package.json        ---             环境配置及运行命令配置
+    build/              ---             webpack配置文件
+    config/             ---             webpack运行文件
+    .eslintignore       ---             eslint忽略检查文件
+    .eslintrc.js        ---             eslint检测规则文件
+    .postcssrc.js       ---             vue-cli的css3自动补全配置
+    .editorconfig       ---             代码规范配置
+    .gitignore          ---             git忽略提交配置
+    .babelrc            ---             babel配置文件
+    index.html          ---             主文件
+    test/               ---             测试脚本
+    static/             ---             静态资源存放
+    qiniu/              ---             七牛云静态资源上传
+        upload/         ---             图片等静态资源存放这里(放这里后，运行node qiniu 命令上传)
+        .qiniu.js       ---             七牛云账号配置
+        index.js        ---             上传函数
+    image/              ---             图片存放(目前项目所有图片存放七牛云)
+    dist/               ---             打包后生成的文件夹
+    src/                ---             开发文件主目录
+        main.js         ---             入口文件
+        App.vue         ---             项目定级组件
+        assets/         ---             静态资源
+        axios/          ---             http请求及拦截器
+        common/         ---             项目公共方法
+        constants/      ---             常量
+            api.js      ---             接口URI
+            chart.js    ---             图表常量配置
+            content.js  ---             常量文件
+        directives/     ---             指令
+            index.js    ---             导出文件
+            rocket.js   ---             返回顶部小火箭指令
+        language/       ---             国际化目录
+        router/         ---             路由配置
+        store/          ---             vuex状态管理目录
+            index.js    ---             vuex导出文件
+            modules/    ---             各个模块对应store文件
+        components/     ---             项目组件目录
+            common/     ---             项目公共组件封装
+
+

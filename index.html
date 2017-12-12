@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>舆情云</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-page-mode" content="no-title">
+  <meta name="x5-pagetype" content="newspage">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="http://ot12u0ynq.bkt.clouddn.com/about_icon@3x.png" />
+  <link href="static/iconfont/iconfont.css?001" rel="stylesheet">
+  <link href="http://ot12u0ynq.bkt.clouddn.com/animate.min.css" rel="stylesheet">
+  <style>
+    @media screen and (max-width: 750px) {
+      html {
+        font-size: 40px;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      html {
+        font-size: 34.1333px;
+      }
+    }
+
+    @media screen and (max-width: 414px) {
+      html {
+        font-size: 22.08px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      html {
+        font-size: 20px;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      html {
+        font-size: 17.0667px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app'></div>
+  <script>
+    window.onload = function () {
+      var shitYDDom = document.getElementById('tlbstoolbar');
+      if (shitYDDom) {
+        shitYDDom.parentNode.removeChild(shitYDDom);
+      }
+      if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function () {
+          FastClick.attach(document.body);
+        }, false);
+      }
+      localStorage.setItem = function (key, value) {
+        var storageEvent = new Event("storageEvent");
+        storageEvent.storageKey = key;
+        storageEvent.storageValue = value;
+        localStorage.key = value;
+        window.dispatchEvent(storageEvent);
+      }
+      function media(minWidth, maxWidth, rootSize, designWidth) {
+        var minWidth = minWidth || 'min';
+        var maxWidth = maxWidth || 'max';
+        var rootSize = rootSize || 20;
+        var designWidth = designWidth || 640;
+        var fontProportion = designWidth / rootSize;
+        var winWidth = window.innerWidth;
+        var body = document.getElementsByTagName("body")[0];
+        var html = document.getElementsByTagName("html")[0];
+        var fontSize;
+        if (minWidth != 'min') {
+          body.style.minWidth = minWidth + 'px';
+        }
+        if (maxWidth != 'max') {
+          body.style.maxWidth = maxWidth + 'px';
+          body.style.margin = '0 auto';
+        }
+        if (winWidth <= minWidth) {
+          fontSize = minWidth / fontProportion;
+        } else
+          if (winWidth >= maxWidth) {
+            fontSize = maxWidth / fontProportion;
+          } else {
+            fontSize = winWidth / fontProportion;
+          }
+        html.style.fontSize = fontSize + 'px';
+      };
+      media(320, 750, 20, 375);
+      window.onresize = function () {
+        media(320, 750, 20, 375);
+      }
+    };
+  </script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/polyfill.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/vue-router.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/vuex.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/vue-i18n.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/axios.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/jquery.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/fastclick.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/echarts.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/echarts-wordcloud.min.js"></script>
+  <script src="http://ot12u0ynq.bkt.clouddn.com/countly.min.js"></script>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
